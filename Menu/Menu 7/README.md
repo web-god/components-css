@@ -4,4 +4,4 @@
 
 ![image](https://github.com/web-god/components-css/assets/132649294/8c91c89f-3fff-4187-a8bc-81af60f410fd)
 
-![image](https://github.com/web-god/components-css/assets/132649294/87c8b79c-1c17-4b7e-b560-97c5444857ae)
+
