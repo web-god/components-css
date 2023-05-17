@@ -1,0 +1,81 @@
+html {
+    background: #e8e8f3;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .menu {
+    position: relative;
+    top: 40px;
+    padding: 30px;
+    background: #e8e8f3;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0.2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0);
+    &::before, &::after {
+      content: "";
+      background: #c3c2c7;
+      border-radius: 5px;
+      width: 30px;
+      height: 5px;
+      position: absolute;
+      left: 16px;
+      top: 27px;
+      transition: 0.2s ease;
+      z-index: 1;
+    }
+    &::before {
+      transform: rotate(0deg);
+    }
+    &::after {
+      transform: rotate(-90deg);
+    }
+    &.open {
+      opacity: .9;
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+      .button {
+        opacity: 1;
+        pointer-events: auto;
+        &:first-of-type {
+          bottom: 40px;
+          right: 70px;
+          background: url("cam.svg") no-repeat 50%/50% #e8e8f3;
+        }
+        &:nth-of-type(2) {
+          bottom: 80px;
+          background: url("setting.svg") no-repeat 50%/ 50% #e8e8f3;
+          transition-delay: .05s;
+        }
+        &:last-of-type {
+          bottom: 40px;
+          right: -70px;
+          background: url("code.svg") no-repeat 50% 45%/50% 45% #e8e8f3;
+          transition-delay: .1s;
+        }
+      }
+    }
+  }
+  
+  .button {
+    padding: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #e8e8f3;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: inherit;
+    transition: 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28), 0.2s ease opacity, 0.2s cubic-bezier(.08,.82,.17,1) transform;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
